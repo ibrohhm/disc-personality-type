@@ -1,0 +1,37 @@
+{{ define "title" }}{{ .Title }} | {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<section class="question-page">
+  <div class="question-card">
+    <h1 class="question-title">{{ .Title }}</h1>
+    <p class="question-instruction">Please SELECT ONE from the 4 (four) word groups below that BEST DESCRIBES your personality. "MOST" for the word that most represents you. "LEAST" for the word that least represents you.</p>
+
+    <form class="question-form">
+      <table class="options-table">
+        <thead>
+          <tr>
+            <th class="col-option"></th>
+            <th class="col-radio">Most</th>
+            <th class="col-radio">Least</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ range .Params.options }}
+          <tr>
+            <td class="option-text">{{ .text }}</td>
+            <td class="option-radio">
+              <input type="radio" class="radio-circle most" name="most" value="{{ .value }}" aria-label="Most">
+            </td>
+            <td class="option-radio">
+              <input type="radio" class="radio-circle least" name="least" value="{{ .value }}" aria-label="Least">
+            </td>
+          </tr>
+          {{ end }}
+        </tbody>
+      </table>
+
+      <button type="submit" class="btn-next">NEXT →</button>
+    </form>
+  </div>
+</section>
+{{ end }}

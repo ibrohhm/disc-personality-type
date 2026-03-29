@@ -6,6 +6,38 @@
   </url><url>
     <loc>http://localhost:1313/</loc>
   </url><url>
+    <loc>http://localhost:1313/question/1/</loc>
+  </url><url>
+    <loc>http://localhost:1313/question/10/</loc>
+  </url><url>
+    <loc>http://localhost:1313/question/11/</loc>
+  </url><url>
+    <loc>http://localhost:1313/question/12/</loc>
+  </url><url>
+    <loc>http://localhost:1313/question/13/</loc>
+  </url><url>
+    <loc>http://localhost:1313/question/14/</loc>
+  </url><url>
+    <loc>http://localhost:1313/question/15/</loc>
+  </url><url>
+    <loc>http://localhost:1313/question/2/</loc>
+  </url><url>
+    <loc>http://localhost:1313/question/3/</loc>
+  </url><url>
+    <loc>http://localhost:1313/question/4/</loc>
+  </url><url>
+    <loc>http://localhost:1313/question/5/</loc>
+  </url><url>
+    <loc>http://localhost:1313/question/6/</loc>
+  </url><url>
+    <loc>http://localhost:1313/question/7/</loc>
+  </url><url>
+    <loc>http://localhost:1313/question/8/</loc>
+  </url><url>
+    <loc>http://localhost:1313/question/9/</loc>
+  </url><url>
+    <loc>http://localhost:1313/question/</loc>
+  </url><url>
     <loc>http://localhost:1313/tags/</loc>
   </url>
 </urlset>
