@@ -1,12 +1,10 @@
-{{ define "title" }}{{ .Site.Title }}{{ end }}
-
 {{ define "main" }}
 <section class="question-page">
   <div id="questions-container">
     {{ range $index, $q := hugo.Data.questions }}
     <div class="question-card" data-index="{{ $index }}" {{ if ne $index 0 }}style="display:none"{{ end }}>
       <h1 class="question-title">{{ $q.title }}</h1>
-      <p class="question-instruction">Select the word that <strong>most</strong> and <strong>least</strong> describes you.</p>
+      <p class="question-instruction">Select the word thatssss <strong>most</strong> and <strong>least</strong> describes you.</p>
       <form class="question-form">
         <table class="options-table">
           <thead>
@@ -47,6 +45,11 @@
     </div>
     {{ end }}
   </div>
+  <div id="questions-navigator">
+    {{ range $index, $q := hugo.Data.questions }}
+    <button type="button" class="nav-btn{{ if eq $index 0 }} active{{ end }}" data-nav="{{ $index }}"></button>
+    {{ end }}
+  </div>
 </section>
 {{ end }}
 
@@ -83,6 +86,12 @@
     return { most, least };
   }
 
+  function updateNavigator(activeIndex) {
+    document.querySelectorAll('.nav-btn').forEach(btn => {
+      btn.classList.toggle('active', Number.parseInt(btn.dataset.nav) === activeIndex);
+    });
+  }
+
   document.querySelectorAll('.btn-next[data-index]').forEach(btn => {
     btn.addEventListener('click', function () {
       const index = Number.parseInt(this.dataset.index);
@@ -98,6 +107,7 @@
 
       card.style.display = 'none';
       document.querySelector(`[data-index="${index + 1}"]`).style.display = '';
+      updateNavigator(index + 1);
     });
   });
 
@@ -106,6 +116,7 @@
       const index = Number.parseInt(this.dataset.index);
       document.querySelector(`[data-index="${index}"]`).style.display = 'none';
       document.querySelector(`[data-index="${index - 1}"]`).style.display = '';
+      updateNavigator(index - 1);
     });
   });
 
