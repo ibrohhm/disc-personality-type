@@ -6,7 +6,7 @@
     {{ range $index, $q := hugo.Data.questions }}
     <div class="question-card" data-index="{{ $index }}" {{ if ne $index 0 }}style="display:none"{{ end }}>
       <h1 class="question-title">{{ $q.title }}</h1>
-      <p class="question-instruction">Please SELECT ONE from the 4 (four) word groups below that BEST DESCRIBES your personality. "MOST" for the word that most represents you. "LEAST" for the word that least represents you.</p>
+      <p class="question-instruction">Select the word that <strong>most</strong> and <strong>least</strong> describes you.</p>
       <form class="question-form">
         <table class="options-table">
           <thead>
@@ -129,13 +129,15 @@
       return count;
     };
 
+    const types = ['D', 'I', 'S', 'C'];
     const mostCount = tally('most');
     const leastCount = tally('least');
-    const topOf = count => Object.keys(count).reduce((a, b) => count[a] >= count[b] ? a : b);
+    const topOf = obj => types.reduce((a, b) => obj[a] >= obj[b] ? a : b, types[0]);
 
-    console.log('All answers:', answers);
-    console.log('Most count:', mostCount, '→', topOf(mostCount));
-    console.log('Least count:', leastCount, '→', topOf(leastCount));
+    const mostType = topOf(mostCount);
+    const leastType = topOf(leastCount);
+
+    globalThis.location.href = `{{ "result" | relURL }}?most=${mostType}&least=${leastType}`;
   });
 </script>
 {{ end }}

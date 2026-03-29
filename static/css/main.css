@@ -191,3 +191,179 @@ h2 {
   cursor: default;
   transform: none;
 }
+
+/* Result page */
+.result-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  gap: 40px;
+  width: 100%;
+
+  .result-header h1 {
+    font-size: 48px;
+    letter-spacing: 8px;
+    margin-bottom: 12px;
+  }
+
+  .result-description {
+    font-size: 18px;
+    color: #555;
+  }
+
+  .result-error {
+    font-size: 20px;
+    color: #e53935;
+  }
+}
+
+.result-summary {
+  width: 100%;
+  max-width: 640px;
+}
+
+.summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.summary-tag {
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 4px 14px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.most-tag {
+  background: #a8d0b3;
+  color: #1a4a2a;
+}
+
+.least-tag {
+  background: #ecada6;
+  color: #5a1a14;
+}
+
+.summary-type {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.summary-divider {
+  font-size: 32px;
+  color: #ccc;
+}
+
+.tension-badge {
+  border: 2px dashed #f0a500;
+  border-radius: 12px;
+  padding: 20px 28px;
+  text-align: center;
+  background: #fffbf0;
+
+  .tension-label {
+    display: inline-block;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #f0a500;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.6;
+  }
+}
+
+.result-cards {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.disc-card {
+  width: 320px;
+  border: 3px solid var(--card-color);
+  border-radius: 16px;
+  overflow: hidden;
+  text-align: left;
+
+  .card-header {
+    background: var(--card-color);
+    color: white;
+    padding: 24px 28px;
+
+    .card-role-tag {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.25);
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card-type {
+      font-size: 56px;
+      letter-spacing: 4px;
+      margin: 0;
+    }
+
+    .card-label {
+      font-size: 18px;
+      opacity: 0.9;
+      margin-top: 4px;
+    }
+  }
+
+  .card-body {
+    padding: 24px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    .card-section h3 {
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--card-color);
+      margin-bottom: 8px;
+    }
+
+    .card-section ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      li::before {
+        content: '— ';
+        color: var(--card-color);
+      }
+    }
+
+    .card-section p {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.6;
+    }
+  }
+}

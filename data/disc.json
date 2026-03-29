@@ -1,0 +1,34 @@
+[
+  {
+    "type": "D",
+    "label": "Dominance",
+    "traits": "Direct and decisive, Results-oriented, Bold and competitive, Independent and self-reliant, Takes charge and risks",
+    "strengths": "Natural leader, drives results, thrives under pressure",
+    "weaknesses": "Impatient, blunt, poor listener, can be controlling",
+    "fears": "Loss of control, being taken advantage of"
+  },
+  {
+    "type": "I",
+    "label": "Influence",
+    "traits": "Enthusiastic and optimistic, Talkative and persuasive, Sociable and fun-loving, Trusting and open, Recognition-seeking",
+    "strengths": "Energizes others, builds relationships, inspires enthusiasm",
+    "weaknesses": "Impulsive, disorganized, overpromises, easily distracted",
+    "fears": "Rejection, loss of approval or social acceptance"
+  },
+  {
+    "type": "S",
+    "label": "Steadiness",
+    "traits": "Patient and reliable, Calm and stable, Loyal and supportive, Warm and empathetic, Avoids conflict",
+    "strengths": "Team player, consistent, dependable, great listener",
+    "weaknesses": "Resistant to change, avoids confrontation, indecisive under pressure",
+    "fears": "Loss of security and stability, sudden change"
+  },
+  {
+    "type": "C",
+    "label": "Conscientiousness",
+    "traits": "Analytical and detail-oriented, Systematic and accurate, Follows rules and standards, Cautious and methodical, Values quality",
+    "strengths": "Thorough, precise, high standards, strong critical thinking",
+    "weaknesses": "Overly critical, perfectionistic, slow to decide, avoids risk",
+    "fears": "Criticism of their work, being wrong or making errors"
+  }
+]

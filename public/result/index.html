@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Result | My New Hugo Project</title>
+  <meta name="description" content="" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/main.css" />
+  
+</head>
+<body>
+  <main>
+    
+<section class="result-page">
+  <div class="result-header">
+    <h1>Your Personality Type</h1>
+    <p class="result-description">Here are your personality types based on the answers you provided.</p>
+  </div>
+
+  <div id="result-summary" class="result-summary">
+    <div class="summary-row" id="summary-normal" style="display: none;">
+      <div class="summary-item">
+        <span class="summary-tag most-tag">Most</span>
+        <span class="summary-type" id="summary-most"></span>
+      </div>
+      <div class="summary-divider">×</div>
+      <div class="summary-item">
+        <span class="summary-tag least-tag">Least</span>
+        <span class="summary-type" id="summary-least"></span>
+      </div>
+    </div>
+    <div class="tension-badge" id="summary-tension" style="display: none;">
+      <span class="tension-label">Internal Tension Detected</span>
+      <p>You show high adaptability and internal tension around the <strong id="tension-type"></strong> dimension — it appears as both your dominant and suppressed style.</p>
+    </div>
+  </div>
+
+  <div id="result-cards" class="result-cards">
+    
+    <div class="disc-card" data-type="D" style="display: none;">
+      <div class="card-header">
+        <p class="card-label">Dominance</p>
+      </div>
+      <div class="card-body">
+        <div class="card-section">
+          <span>Traits: </span> Direct and decisive, Results-oriented, Bold and competitive, Independent and self-reliant, Takes charge and risks
+        </div>
+        <div class="card-section">
+          <span>Strengths: </span> Natural leader, drives results, thrives under pressure
+        </div>
+        <div class="card-section">
+          <span>Weaknesses: </span> Impatient, blunt, poor listener, can be controlling
+        </div>
+        <div class="card-section">
+          <span>Core Fear: </span> Loss of control, being taken advantage of
+        </div>
+      </div>
+    </div>
+    
+    <div class="disc-card" data-type="I" style="display: none;">
+      <div class="card-header">
+        <p class="card-label">Influence</p>
+      </div>
+      <div class="card-body">
+        <div class="card-section">
+          <span>Traits: </span> Enthusiastic and optimistic, Talkative and persuasive, Sociable and fun-loving, Trusting and open, Recognition-seeking
+        </div>
+        <div class="card-section">
+          <span>Strengths: </span> Energizes others, builds relationships, inspires enthusiasm
+        </div>
+        <div class="card-section">
+          <span>Weaknesses: </span> Impulsive, disorganized, overpromises, easily distracted
+        </div>
+        <div class="card-section">
+          <span>Core Fear: </span> Rejection, loss of approval or social acceptance
+        </div>
+      </div>
+    </div>
+    
+    <div class="disc-card" data-type="S" style="display: none;">
+      <div class="card-header">
+        <p class="card-label">Steadiness</p>
+      </div>
+      <div class="card-body">
+        <div class="card-section">
+          <span>Traits: </span> Patient and reliable, Calm and stable, Loyal and supportive, Warm and empathetic, Avoids conflict
+        </div>
+        <div class="card-section">
+          <span>Strengths: </span> Team player, consistent, dependable, great listener
+        </div>
+        <div class="card-section">
+          <span>Weaknesses: </span> Resistant to change, avoids confrontation, indecisive under pressure
+        </div>
+        <div class="card-section">
+          <span>Core Fear: </span> Loss of security and stability, sudden change
+        </div>
+      </div>
+    </div>
+    
+    <div class="disc-card" data-type="C" style="display: none;">
+      <div class="card-header">
+        <p class="card-label">Conscientiousness</p>
+      </div>
+      <div class="card-body">
+        <div class="card-section">
+          <span>Traits: </span> Analytical and detail-oriented, Systematic and accurate, Follows rules and standards, Cautious and methodical, Values quality
+        </div>
+        <div class="card-section">
+          <span>Strengths: </span> Thorough, precise, high standards, strong critical thinking
+        </div>
+        <div class="card-section">
+          <span>Weaknesses: </span> Overly critical, perfectionistic, slow to decide, avoids risk
+        </div>
+        <div class="card-section">
+          <span>Core Fear: </span> Criticism of their work, being wrong or making errors
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+  </main>
+  
+<script>
+  const params = new URLSearchParams(globalThis.location.search);
+  const mostType = params.get('most')?.toUpperCase();
+  const leastType = params.get('least')?.toUpperCase();
+  const valid = ['D', 'I', 'S', 'C'];
+
+  if (!valid.includes(mostType) || !valid.includes(leastType)) {
+    document.querySelector('.result-page').innerHTML = '<p class="result-error">Invalid result. Please retake the quiz.</p>';
+  } else {
+    const isSame = mostType === leastType;
+
+    if (isSame) {
+      document.getElementById('tension-type').textContent = mostType;
+      document.getElementById('summary-tension').style.display = '';
+    } else {
+      const mostCard = document.querySelector(`.disc-card[data-type="${mostType}"]`);
+      const leastCard = document.querySelector(`.disc-card[data-type="${leastType}"]`);
+      const summaryMost = document.getElementById('summary-most');
+      const summaryLeast = document.getElementById('summary-least');
+      summaryMost.textContent = `${mostType} — ${mostCard.querySelector('.card-label').textContent}`;
+      summaryLeast.textContent = `${leastType} — ${leastCard.querySelector('.card-label').textContent}`;
+      document.getElementById('summary-normal').style.display = '';
+    }
+
+    const typesToShow = isSame ? [mostType] : [mostType, leastType];
+
+    typesToShow.forEach(type => {
+      const card = document.querySelector(`.disc-card[data-type="${type}"]`);
+      card.style.display = '';
+    });
+  }
+</script>
+
+</body>
+</html>

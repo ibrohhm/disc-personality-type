@@ -3,9 +3,9 @@
 {{ define "main" }}
 <section class="hero">
   <h1>{{ .Title | default .Site.Title }}</h1>
-  {{ with .Params.subtitle }}<h2>{{ . }}</h2>{{ end }}
+  {{ with .Params.subtitle }}<h1>{{ . }}</h1>{{ end }}
   {{ with .Description }}<p class="description">{{ . }}</p>{{ end }}
   {{ with .Content }}<div class="content">{{ . }}</div>{{ end }}
-  <a href="{{ "question" | relURL }}" class="btn-play">PLAY →</a>
+  <a href="{{ "question" | relURL }}" class="btn-play">Start Survey →</a>
 </section>
 {{ end }}

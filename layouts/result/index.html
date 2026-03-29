@@ -1,0 +1,87 @@
+{{ define "title" }}Result | {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<section class="result-page">
+  <div class="result-header">
+    <h1>Your Personality Type</h1>
+    <p class="result-description">Here are your personality types based on the answers you provided.</p>
+  </div>
+
+  <div id="result-summary" class="result-summary">
+    <div class="summary-row" id="summary-normal" style="display: none;">
+      <div class="summary-item">
+        <span class="summary-tag most-tag">Most</span>
+        <span class="summary-type" id="summary-most"></span>
+      </div>
+      <div class="summary-divider">×</div>
+      <div class="summary-item">
+        <span class="summary-tag least-tag">Least</span>
+        <span class="summary-type" id="summary-least"></span>
+      </div>
+    </div>
+    <div class="tension-badge" id="summary-tension" style="display: none;">
+      <span class="tension-label">Internal Tension Detected</span>
+      <p>You show high adaptability and internal tension around the <strong id="tension-type"></strong> dimension — it appears as both your dominant and suppressed style.</p>
+    </div>
+  </div>
+
+  <div id="result-cards" class="result-cards">
+    {{ range hugo.Data.disc }}
+    <div class="disc-card" data-type="{{ .type }}" style="display: none;">
+      <div class="card-header">
+        <p class="card-label">{{ .label }}</p>
+      </div>
+      <div class="card-body">
+        <div class="card-section">
+          <span>Traits: </span> {{ .traits }}
+        </div>
+        <div class="card-section">
+          <span>Strengths: </span> {{ .strengths }}
+        </div>
+        <div class="card-section">
+          <span>Weaknesses: </span> {{ .weaknesses }}
+        </div>
+        <div class="card-section">
+          <span>Core Fear: </span> {{ .fears }}
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+{{ define "scripts" }}
+<script>
+  const params = new URLSearchParams(globalThis.location.search);
+  const mostType = params.get('most')?.toUpperCase();
+  const leastType = params.get('least')?.toUpperCase();
+  const valid = ['D', 'I', 'S', 'C'];
+
+  if (!valid.includes(mostType) || !valid.includes(leastType)) {
+    document.querySelector('.result-page').innerHTML = '<p class="result-error">Invalid result. Please retake the quiz.</p>';
+  } else {
+    const isSame = mostType === leastType;
+
+    if (isSame) {
+      document.getElementById('tension-type').textContent = mostType;
+      document.getElementById('summary-tension').style.display = '';
+    } else {
+      const mostCard = document.querySelector(`.disc-card[data-type="${mostType}"]`);
+      const leastCard = document.querySelector(`.disc-card[data-type="${leastType}"]`);
+      const summaryMost = document.getElementById('summary-most');
+      const summaryLeast = document.getElementById('summary-least');
+      summaryMost.textContent = `${mostType} — ${mostCard.querySelector('.card-label').textContent}`;
+      summaryLeast.textContent = `${leastType} — ${leastCard.querySelector('.card-label').textContent}`;
+      document.getElementById('summary-normal').style.display = '';
+    }
+
+    const typesToShow = isSame ? [mostType] : [mostType, leastType];
+
+    typesToShow.forEach(type => {
+      const card = document.querySelector(`.disc-card[data-type="${type}"]`);
+      card.style.display = '';
+    });
+  }
+</script>
+{{ end }}
