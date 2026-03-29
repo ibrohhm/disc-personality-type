@@ -6,6 +6,6 @@
   {{ with .Params.subtitle }}<h2>{{ . }}</h2>{{ end }}
   {{ with .Description }}<p class="description">{{ . }}</p>{{ end }}
   {{ with .Content }}<div class="content">{{ . }}</div>{{ end }}
-  <a href="#" class="btn-play">PLAY →</a>
+  <a href="{{ "question" | relURL }}" class="btn-play">PLAY →</a>
 </section>
 {{ end }}

@@ -90,7 +90,8 @@ h2 {
       border-bottom: 1px solid #eee;
     }
 
-    .col-radio{
+    .col-radio {
+      width: 80px;
       text-align: center;
     }
 
@@ -126,7 +127,7 @@ h2 {
   }
 }
 
-.btn-next {
+.btn {
   display: block;
   margin: 36px auto 0;
   padding: 14px 48px;
@@ -138,8 +139,55 @@ h2 {
   color: #333;
   cursor: pointer;
   transition: transform 0.2s;
+  width: fit-content;
+  text-decoration: none;
 }
 
 .btn-next:hover {
   transform: scale(1.05);
+}
+
+.error-note {
+  color: #e53935;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.btn-group .btn-next,
+.btn-group .btn-back,
+.btn-group .btn-submit {
+  margin: 0;
+}
+
+.btn-back {
+  display: block;
+  padding: 14px 48px;
+  border: 3px solid #333;
+  border-radius: 50px;
+  background: white;
+  font-family: 'Architects Daughter', cursive;
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.2s;
+  width: fit-content;
+}
+
+.btn-back:hover {
+  transform: scale(1.05);
+}
+
+.btn-back:disabled,
+.btn-next:disabled {
+  opacity: 0.3;
+  cursor: default;
+  transform: none;
 }

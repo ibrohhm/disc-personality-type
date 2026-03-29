@@ -1,0 +1,141 @@
+{{ define "title" }}{{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<section class="question-page">
+  <div id="questions-container">
+    {{ range $index, $q := hugo.Data.questions }}
+    <div class="question-card" data-index="{{ $index }}" {{ if ne $index 0 }}style="display:none"{{ end }}>
+      <h1 class="question-title">{{ $q.title }}</h1>
+      <p class="question-instruction">Please SELECT ONE from the 4 (four) word groups below that BEST DESCRIBES your personality. "MOST" for the word that most represents you. "LEAST" for the word that least represents you.</p>
+      <form class="question-form">
+        <table class="options-table">
+          <thead>
+            <tr>
+              <th class="col-option"></th>
+              <th class="col-radio">Most</th>
+              <th class="col-radio">Least</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{ range $q.options }}
+            <tr>
+              <td class="option-text">{{ .text }}</td>
+              <td class="option-radio">
+                <input type="radio" class="radio-circle most" name="most-{{ $index }}" value="{{ .value }}" aria-label="Most">
+              </td>
+              <td class="option-radio">
+                <input type="radio" class="radio-circle least" name="least-{{ $index }}" value="{{ .value }}" aria-label="Least">
+              </td>
+            </tr>
+            {{ end }}
+          </tbody>
+        </table>
+        <p class="error-note" style="display:none">Please select both Most and Least before continuing.</p>
+        <div class="btn-group">
+          {{ if gt $index 0 }}
+            <button type="button" class="btn btn-back" data-index="{{ $index }}">← BACK</button>
+          {{ end }}
+
+          {{ $last := sub (len hugo.Data.questions) 1 }}
+          {{ if lt $index $last }}
+            <button type="button" class="btn btn-next" data-index="{{ $index }}">NEXT →</button>
+          {{ else }}
+            <button type="button" class="btn btn-submit">Submit</button>
+          {{ end }}
+        </div>
+      </form>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+{{ define "scripts" }}
+<script>
+  const answers = [];
+
+  document.querySelectorAll('.question-card').forEach(card => {
+    card.querySelectorAll('input[type="radio"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        card.querySelector('.error-note').style.display = 'none';
+      });
+    });
+  });
+
+  function validate(card, index) {
+    const most = card.querySelector(`input[name="most-${index}"]:checked`)?.value ?? null;
+    const least = card.querySelector(`input[name="least-${index}"]:checked`)?.value ?? null;
+    const error = card.querySelector('.error-note');
+
+    if (!most || !least) {
+      error.textContent = 'Please select both Most and Least before continuing.';
+      error.style.display = '';
+      return null;
+    }
+
+    if (most === least) {
+      error.textContent = 'Most and Least cannot be the same option.';
+      error.style.display = '';
+      return null;
+    }
+
+    error.style.display = 'none';
+    return { most, least };
+  }
+
+  document.querySelectorAll('.btn-next[data-index]').forEach(btn => {
+    btn.addEventListener('click', function () {
+      const index = Number.parseInt(this.dataset.index);
+      const card = document.querySelector(`[data-index="${index}"]`);
+      const result = validate(card, index);
+
+      if (!result) return;
+
+      const { most, least } = result;
+
+      const title = card.querySelector('.question-title').textContent;
+      answers[index] = { [title]: { most, least } };
+
+      card.style.display = 'none';
+      document.querySelector(`[data-index="${index + 1}"]`).style.display = '';
+    });
+  });
+
+  document.querySelectorAll('.btn-back[data-index]').forEach(btn => {
+    btn.addEventListener('click', function () {
+      const index = Number.parseInt(this.dataset.index);
+      document.querySelector(`[data-index="${index}"]`).style.display = 'none';
+      document.querySelector(`[data-index="${index - 1}"]`).style.display = '';
+    });
+  });
+
+  document.querySelector('.btn-submit')?.addEventListener('click', function () {
+    const lastCard = this.closest('.question-card');
+    const lastIndex = Number.parseInt(lastCard.dataset.index);
+    const result = validate(lastCard, lastIndex);
+
+    if (!result) return;
+
+    const { most, least } = result;
+    const title = lastCard.querySelector('.question-title').textContent;
+    answers[lastIndex] = { [title]: { most, least } };
+
+    const tally = type => {
+      const count = { D: 0, I: 0, S: 0, C: 0 };
+      answers.forEach(a => {
+        const val = Object.values(a)[0][type];
+        if (val) count[val]++;
+      });
+      return count;
+    };
+
+    const mostCount = tally('most');
+    const leastCount = tally('least');
+    const topOf = count => Object.keys(count).reduce((a, b) => count[a] >= count[b] ? a : b);
+
+    console.log('All answers:', answers);
+    console.log('Most count:', mostCount, '→', topOf(mostCount));
+    console.log('Least count:', leastCount, '→', topOf(leastCount));
+  });
+</script>
+{{ end }}

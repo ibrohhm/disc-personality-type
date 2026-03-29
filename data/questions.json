@@ -1,0 +1,218 @@
+[
+  {
+    "title": "Question 1",
+    "options": [
+      { "text": "Kind, gentle-hearted, sweet", "value": "S" },
+      { "text": "Persuasive, convincing, good at influencing others", "value": "I" },
+      { "text": "Does not like to assume, calm, self-controlled", "value": "C" },
+      { "text": "Independent, resourceful, bold", "value": "D" }
+    ]
+  },
+  {
+    "title": "Question 2",
+    "options": [
+      { "text": "Well-liked by many, attracts people, pleasant", "value": "I" },
+      { "text": "Fair, reasonable, just", "value": "C" },
+      { "text": "Iron-willed, firm, decisive", "value": "D" },
+      { "text": "Supportive, helpful, warm", "value": "S" }
+    ]
+  },
+  {
+    "title": "Question 3",
+    "options": [
+      { "text": "Quick to observe, cautious, not careless", "value": "C" },
+      { "text": "Brave, fearless, loves challenges", "value": "D" },
+      { "text": "Loyal, steadfast, firm", "value": "S" },
+      { "text": "Draws people in, energizing, full of enthusiasm", "value": "I" }
+    ]
+  },
+  {
+    "title": "Question 4",
+    "options": [
+      { "text": "Objective, balanced, open-minded, listens to all sides", "value": "C" },
+      { "text": "Willing to help, understanding, wise", "value": "S" },
+      { "text": "Iron-willed, hard to sway, headstrong", "value": "D" },
+      { "text": "Cheerful, carefree, optimistic", "value": "I" }
+    ]
+  },
+  {
+    "title": "Question 5",
+    "options": [
+      { "text": "Full of humor, funny, entertaining", "value": "I" },
+      { "text": "Specific, precise, accurate", "value": "C" },
+      { "text": "Shows courage, daring, willing to take risks", "value": "D" },
+      { "text": "Relaxed, laid-back, content, not easily excitable", "value": "S" }
+    ]
+  },
+  {
+    "title": "Question 6",
+    "options": [
+      { "text": "Aggressive, controlling, always wants to win", "value": "D" },
+      { "text": "Considerate, meets others' needs, caring", "value": "S" },
+      { "text": "Easily enthused, seeks fun and enjoyment", "value": "I" },
+      { "text": "Follows rules, cooperative", "value": "C" }
+    ]
+  },
+  {
+    "title": "Question 7",
+    "options": [
+      { "text": "Detail-oriented, very careful and selective", "value": "C" },
+      { "text": "Loyal, gives their best, dedicated to tasks", "value": "S" },
+      { "text": "Resilient, unshakeable, strong-willed", "value": "D" },
+      { "text": "Full of life and energy, fun-loving, loves to joke", "value": "I" }
+    ]
+  },
+  {
+    "title": "Question 8",
+    "options": [
+      { "text": "Confident, brave, fearless", "value": "D" },
+      { "text": "Inspiring, influential, enthusiastic", "value": "I" },
+      { "text": "Non-confrontational, easy to lead", "value": "S" },
+      { "text": "Avoids the spotlight, plays it safe", "value": "C" }
+    ]
+  },
+  {
+    "title": "Question 9",
+    "options": [
+      { "text": "Open, confident, easy to make friends", "value": "I" },
+      { "text": "Patient, tolerant, compassionate, stable", "value": "S" },
+      { "text": "Self-reliant, goal-driven, does not need others' help", "value": "D" },
+      { "text": "Values privacy, prefers to think things through, does things properly", "value": "C" }
+    ]
+  },
+  {
+    "title": "Question 10",
+    "options": [
+      { "text": "Takes risks, seeks excitement and adrenaline, daring", "value": "D" },
+      { "text": "Open to learning, willing to be taught and convinced", "value": "C" },
+      { "text": "Loves socializing, warm-hearted, pleasant", "value": "I" },
+      { "text": "Easygoing, goes with the flow, laid-back", "value": "S" }
+    ]
+  },
+  {
+    "title": "Question 11",
+    "options": [
+      { "text": "Expressive, loves to talk", "value": "I" },
+      { "text": "Moderate, not extreme, easily influenced", "value": "S" },
+      { "text": "Follows routine, thoughtful and careful in decisions", "value": "C" },
+      { "text": "Confident, quick and decisive", "value": "D" }
+    ]
+  },
+  {
+    "title": "Question 12",
+    "options": [
+      { "text": "Persuasive, non-confrontational, easy to get along with", "value": "I" },
+      { "text": "Likes trying new things, not afraid of challenges", "value": "D" },
+      { "text": "Polite, maintains proper behavior, mindful of appearance", "value": "C" },
+      { "text": "Happy, content, easily satisfied", "value": "S" }
+    ]
+  },
+  {
+    "title": "Question 13",
+    "options": [
+      { "text": "Loves fierce competition, entrepreneurial spirit", "value": "D" },
+      { "text": "Energizes a crowd, entertaining, attention-grabbing", "value": "I" },
+      { "text": "Vulnerable, easily convinced, easily influenced", "value": "S" },
+      { "text": "Easily worried, fears bad outcomes, uncertain", "value": "C" }
+    ]
+  },
+  {
+    "title": "Question 14",
+    "options": [
+      { "text": "Observant, careful, avoids problems, risk-aware", "value": "C" },
+      { "text": "Ambitious, decisive, takes responsibility", "value": "D" },
+      { "text": "Convinces others wholeheartedly, influential", "value": "I" },
+      { "text": "Makes others feel at ease, kind, friendly, patient", "value": "S" }
+    ]
+  },
+  {
+    "title": "Question 15",
+    "options": [
+      { "text": "Ready to help, adaptable, trusting", "value": "S" },
+      { "text": "Easily enthusiastic, easily disappointed", "value": "I" },
+      { "text": "Follows rules and regulations", "value": "C" },
+      { "text": "Highly motivated, takes initiative, full of energy", "value": "D" }
+    ]
+  },
+  {
+    "title": "Question 16",
+    "options": [
+      { "text": "Believes in own abilities, positive, optimistic", "value": "I" },
+      { "text": "Kind-hearted, emotionally driven, responds warmly to others", "value": "S" },
+      { "text": "Evaluates, tests, asks questions", "value": "C" },
+      { "text": "Frank, assertive, quick to respond in emergencies", "value": "D" }
+    ]
+  },
+  {
+    "title": "Question 17",
+    "options": [
+      { "text": "Strongly self-disciplined, controlled, follows procedure", "value": "C" },
+      { "text": "Unselfish, cares for others", "value": "S" },
+      { "text": "Openly expresses feelings and emotions", "value": "I" },
+      { "text": "Committed, persistent, never gives up", "value": "D" }
+    ]
+  },
+  {
+    "title": "Question 18",
+    "options": [
+      { "text": "Enjoys praise, desires recognition", "value": "I" },
+      { "text": "Tries to please others, generous and giving", "value": "S" },
+      { "text": "Selective, careful in making choices", "value": "C" },
+      { "text": "Assertive, persistent, demanding", "value": "D" }
+    ]
+  },
+  {
+    "title": "Question 19",
+    "options": [
+      { "text": "Formal, well-mannered, image-conscious", "value": "C" },
+      { "text": "Innovative, pioneering, loves trying new things", "value": "D" },
+      { "text": "Optimistic, expects good things to happen", "value": "I" },
+      { "text": "Harmonious, enjoys serving, loves helping others", "value": "S" }
+    ]
+  },
+  {
+    "title": "Question 20",
+    "options": [
+      { "text": "Willing to confront others, challenges people", "value": "D" },
+      { "text": "Adaptable, capable of changing", "value": "C" },
+      { "text": "Calm, unbothered, relaxed", "value": "S" },
+      { "text": "Cheerful, carefree, loves having fun", "value": "I" }
+    ]
+  },
+  {
+    "title": "Question 21",
+    "options": [
+      { "text": "Trusts others, open, easily trusting", "value": "I" },
+      { "text": "Peaceful, content, happy", "value": "S" },
+      { "text": "Very confident, highly self-assured", "value": "D" },
+      { "text": "Not easily angered, calm, dislikes rushing", "value": "C" }
+    ]
+  },
+  {
+    "title": "Question 22",
+    "options": [
+      { "text": "Sociable, enjoys being around popular people", "value": "I" },
+      { "text": "Well-informed, elegant, sensitive and quick to understand", "value": "C" },
+      { "text": "Dynamic, embraces change, powerful, full of energy", "value": "D" },
+      { "text": "Tolerant, empathetic, compassionate", "value": "S" }
+    ]
+  },
+  {
+    "title": "Question 23",
+    "options": [
+      { "text": "People enjoy being around me, great at socializing", "value": "I" },
+      { "text": "Precise, accurate, data-driven", "value": "C" },
+      { "text": "Gets straight to the point, speaks directly", "value": "D" },
+      { "text": "Speaks softly and gently, not overly expressive", "value": "S" }
+    ]
+  },
+  {
+    "title": "Question 24",
+    "options": [
+      { "text": "Cannot stay still, always on the move, great at socializing", "value": "D" },
+      { "text": "Avoids conflict, helps others, friendly", "value": "S" },
+      { "text": "Charming, loves spontaneous action, captivating", "value": "I" },
+      { "text": "Systematic, neat, attentive to details", "value": "C" }
+    ]
+  }
+]
