@@ -1,0 +1,51 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Architects Daughter', cursive;
+  text-align: center;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 60px;
+  margin-bottom: 8px;
+  letter-spacing: 20px;
+}
+
+h2 {
+  font-size: 48px;
+  margin-bottom: 24px;
+}
+
+.description {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+.btn-play {
+  position: relative;
+  display: inline-block;
+  padding: 16px 48px;
+  border: 3px solid #333;
+  border-radius: 50px;
+  background: white;
+  font-family: 'Architects Daughter', cursive;
+  font-size: 20px;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btn-play:hover::before {
+  opacity: 1;
+}
+
+.btn-play:hover {
+  transform: scale(1.05);
+}
