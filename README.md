@@ -2,6 +2,8 @@
 
 A DISC personality assessment survey built with Hugo.
 
+**Live site:** https://disc-personality-types.ibrohim-syarif.workers.dev/
+
 ## What is DISC?
 
 DISC is a behavior assessment model based on four personality traits:
