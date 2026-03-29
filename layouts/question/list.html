@@ -4,7 +4,7 @@
     {{ range $index, $q := hugo.Data.questions }}
     <div class="question-card" data-index="{{ $index }}" {{ if ne $index 0 }}style="display:none"{{ end }}>
       <h1 class="question-title">{{ $q.title }}</h1>
-      <p class="question-instruction">Select the word thatssss <strong>most</strong> and <strong>least</strong> describes you.</p>
+      <p class="question-instruction">Select the word that <strong>most</strong> and <strong>least</strong> describes you.</p>
       <form class="question-form">
         <table class="options-table">
           <thead>
